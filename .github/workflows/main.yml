@@ -24,7 +24,7 @@ jobs:
     name: Java/Gradle
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           path: gradle-build-plugins
 
@@ -49,7 +49,7 @@ jobs:
           arguments: assemble check publishToMavenLocal
 
       - name: Clone Nessie for integration test
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: projectnessie/nessie
           ref: main
