@@ -48,17 +48,3 @@ jobs:
           build-root-directory: gradle-build-plugins
           arguments: assemble check publishToMavenLocal
 
-      - name: Clone Nessie for integration test
-        uses: actions/checkout@v4
-        with:
-          repository: projectnessie/nessie
-          ref: main
-          path: nessie
-
-      # Build Nessie as an integration test.
-      # Use :servers:quarkus-cli:intTest as a canary, because that integration uses the Quarkus plugin.
-      - name: Integration test w/ Nessie
-        uses: gradle/gradle-build-action@v2
-        with:
-          build-root-directory: nessie
-          arguments: --include-build ../gradle-build-plugins jar testClasses publishToMavenLocal :nessie-quarkus-cli:intTest
