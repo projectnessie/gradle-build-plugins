@@ -1,3 +1,5 @@
+**THIS REPOSITORY IS UNMAINTAINED AND HAS BEEN ARCHIVED ON JAN 31, 2025**
+
 # Gradle plugins for projectnessie builds
 
 These Gradle plugins are used to build [Nessie](https://github.com/projectnessie/nessie) and
